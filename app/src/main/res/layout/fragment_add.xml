@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent" android:layout_height="match_parent">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp"
+            android:background="#ffffff">
+
+            <TextView
+                style="@style/viewParent.headerText"
+                android:text="@string/post_dish" />
+
+            <EditText
+                android:paddingLeft="15dp"
+                android:layout_centerInParent="true"
+                android:id="@+id/namedish"
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="54dp"
+                android:background="@drawable/shape2"
+                android:ems="10"
+                android:hint="@string/food_name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:padding="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/motachung"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/description"
+                android:inputType="textMultiLine"
+                android:background="@drawable/shape2"
+                />
+            <EditText
+                android:padding="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/nguyenlieu"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/enter_ingredients"
+                android:inputType="textMultiLine"
+                android:background="@drawable/shape2"
+                />
+            <EditText
+                android:padding="15dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:id="@+id/cachlam"
+                android:layout_width="match_parent"
+                android:layout_height="270dp"
+                android:ems="10"
+                android:gravity="start|top"
+                android:hint="@string/making"
+                android:inputType="textMultiLine"
+                android:background="@drawable/shape2"
+                />
+
+            <ImageView
+                android:layout_gravity="center"
+                android:scaleType="fitXY"
+                android:id="@+id/ImageDish"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/camera"
+                tools:ignore="VectorDrawableCompat"
+                android:layout_centerInParent="true"
+                />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="66dp">
+
+                <Button
+                    android:layout_centerInParent="true"
+                    android:id="@+id/upload"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="4dp"
+                    android:text="@string/post"
+                    android:textSize="20dp"
+                    android:background="@drawable/shape4"
+                    />
+            </RelativeLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                />
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

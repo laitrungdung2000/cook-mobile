@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">Lets Cook</string>
+    <string name="sign_up">Bạn chưa có tài khoản? Tạo tài khoản tại đây</string>
+    <string name="log_in">Đăng nhập</string>
+    <string name="sign_in">Sign in</string>
+    <string name="create">Create my account</string>
+    <string name="input_username">Email</string>
+    <string name="input_password">Mật khẩu</string>
+    <string name="forgot_password">Forgot Password</string>
+    <string name="sign_up2">Tạo tài khoản</string>
+    <string name="input_password2">Nhập lại mật khẩu</string>
+    <string name="facebook_app_id">543602266559327</string> <string name="fb_login_protocol_scheme">fb543602266559327</string>
+
+
+</resources>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "884732400095",
+    "firebase_url": "https://dcmm-bc67e.firebaseio.com",
+    "project_id": "dcmm-bc67e",
+    "storage_bucket": "dcmm-bc67e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:884732400095:android:a70a0533bb7ccc77",
+        "android_client_info": {
+          "package_name": "com.ui.letcook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "884732400095-bqpdo2ljmuj5a4af8mbono7b9vtfeugb.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBlRmZtCeN1Z_rc09dlRxdJ9O2XqMuQyXU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "884732400095-bqpdo2ljmuj5a4af8mbono7b9vtfeugb.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

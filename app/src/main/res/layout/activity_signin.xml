@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+
+    <ImageView
+        android:layout_centerInParent="true"
+        android:layout_above="@+id/ll"
+        android:layout_width="250dp"
+        android:layout_height="match_parent"
+        android:src="@drawable/logo" />
+
+    <LinearLayout
+        android:id="@+id/ll"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/tksi"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/input_username"
+            android:background="@drawable/shape2"
+            />
+
+        <EditText
+            android:id="@+id/mksi"
+            android:inputType="textPassword"
+            android:paddingLeft="15dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/black"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:hint="@string/input_password"
+            android:background="@drawable/shape2"
+            />
+        <TextView
+            android:id="@+id/forgot"
+            android:textSize="16sp"
+            android:layout_marginBottom="30dp"
+            android:layout_gravity="right"
+            android:layout_alignParentBottom="true"
+            android:text = "@string/forgot_password"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+        <Button
+            android:id="@+id/bSin"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/shape"
+            android:text="@string/log_in"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="20sp" />
+        <com.facebook.login.widget.LoginButton
+            android:id="@+id/login_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp" />
+        <!--        <TextView-->
+<!--            android:textStyle="bold|italic"-->
+<!--            android:textSize="16sp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:textColor="@color/white"-->
+<!--            android:text="@string/forgot_password"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content" />-->
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textsignup"
+        android:textSize="16sp"
+        android:layout_marginBottom="30dp"
+        android:layout_centerInParent="true"
+        android:layout_alignParentBottom="true"
+        android:text = "@string/create"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        />
+
+</RelativeLayout>

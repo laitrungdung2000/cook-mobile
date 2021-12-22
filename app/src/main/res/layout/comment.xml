@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="60dp">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/imagecmt"
+        android:layout_width="34dp"
+        android:layout_height="29dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="13dp"
+        app:srcCompat="@android:color/background_dark"
+        app:civ_border_width="2dp"
+        app:civ_border_color="#ffffff"
+        />
+
+    <TextView
+        android:textStyle="bold"
+        android:textColor="#000000"
+        android:id="@+id/emailcm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="53dp"
+        android:layout_marginLeft="53dp"
+        android:layout_marginTop="18dp"
+        android:text="TextView" />
+
+        <TextView
+            android:id="@+id/cmt"
+            android:layout_width="265dp"
+            android:layout_height="36dp"
+            android:layout_alignParentTop="true"
+            android:layout_marginStart="22dp"
+            android:layout_marginLeft="22dp"
+            android:layout_marginTop="17dp"
+            android:layout_toEndOf="@+id/emailcm"
+            android:layout_toRightOf="@+id/emailcm"
+            android:text="aaaaaaaaaaaaaaaaaaaaaaa" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

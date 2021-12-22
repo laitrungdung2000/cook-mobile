@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/contentBodyColor">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <TextView
+            style="@style/viewParent.headerText"
+            android:text="@string/account" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/avatar"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:src="@android:drawable/ic_menu_camera"
+                app:civ_border_color="#ffffff"
+                app:civ_border_width="2dp" />
+
+            <TextView
+                android:id="@+id/usename"
+                style="@style/viewParent.headerText"
+                android:text=""
+                android:textSize="18sp"
+                android:layout_toRightOf="@id/avatar"
+             android:layout_gravity="center"/>
+
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/info" />
+
+        <TextView
+            android:id="@+id/upload"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_edit_profile"
+            android:text="@string/change_avatar" />
+
+        <TextView
+            android:id="@+id/changename"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_dark_mode"
+            android:layout_marginTop="10dp"
+            android:text="@string/change_name_user" />
+
+        <TextView
+            android:id="@+id/changepass"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/iconpassword"
+            android:layout_marginTop="10dp"
+            android:text="@string/change_password" />
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/language" />
+
+        <TextView
+            android:id="@+id/choose_langage"
+
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/language"
+            android:text="@string/language"
+            />
+
+        <TextView
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/active" />
+
+        <TextView
+            android:id="@+id/history"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_edit_password"
+            android:text="@string/posted" />
+
+
+        <TextView
+            android:id="@+id/savedish"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_languages"
+            android:text="@string/post_saved" />
+
+        <TextView
+            android:id="@+id/dangxuat"
+            style="@style/viewParent.headerText.settingsTextIcon"
+            android:drawableLeft="@drawable/ic_logout"
+            android:text="@string/log_out" />
+
+
+        <TextView
+            android:layout_marginTop="100dp"
+            style="@style/viewParent.headerText.settingsMiniTitle"
+            android:text="@string/app_ver"
+            android:textAlignment="center"/>
+
+    </LinearLayout>
+</ScrollView>
