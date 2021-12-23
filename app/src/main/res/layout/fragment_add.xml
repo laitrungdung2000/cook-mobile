@@ -11,100 +11,163 @@
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:background="#ffffff"
             android:orientation="vertical"
-            android:padding="20dp"
-            android:background="#ffffff">
+            android:padding="20dp">
 
             <TextView
                 style="@style/viewParent.headerText"
                 android:text="@string/post_dish" />
 
             <EditText
-                android:paddingLeft="15dp"
-                android:layout_centerInParent="true"
                 android:id="@+id/namedish"
-                android:layout_marginTop="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="54dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
                 android:background="@drawable/shape2"
                 android:ems="10"
                 android:hint="@string/food_name"
-                android:inputType="textPersonName" />
+                android:inputType="textPersonName"
+                android:paddingLeft="15dp" />
 
             <EditText
-                android:padding="15dp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
                 android:id="@+id/motachung"
                 android:layout_width="match_parent"
                 android:layout_height="100dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape2"
                 android:ems="10"
                 android:gravity="start|top"
                 android:hint="@string/description"
                 android:inputType="textMultiLine"
-                android:background="@drawable/shape2"
-                />
+                android:padding="15dp" />
+
             <EditText
-                android:padding="15dp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
                 android:id="@+id/nguyenlieu"
                 android:layout_width="match_parent"
                 android:layout_height="150dp"
+                android:layout_centerInParent="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape2"
                 android:ems="10"
                 android:gravity="start|top"
                 android:hint="@string/enter_ingredients"
                 android:inputType="textMultiLine"
-                android:background="@drawable/shape2"
-                />
-            <EditText
-                android:padding="15dp"
-                android:layout_centerInParent="true"
-                android:layout_marginTop="10dp"
-                android:id="@+id/cachlam"
-                android:layout_width="match_parent"
-                android:layout_height="270dp"
-                android:ems="10"
-                android:gravity="start|top"
-                android:hint="@string/making"
-                android:inputType="textMultiLine"
-                android:background="@drawable/shape2"
-                />
+                android:padding="15dp" />
+
+            <Button
+                android:id="@+id/add"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Add" />
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/b1">
+
+                <EditText
+                    android:id="@+id/cachlam"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape2"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/making"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp" />
+
+                <Button
+                    android:id="@+id/substract"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:text="-" />
+                <ImageView
+                    android:id="@+id/imgStep"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/cachlam"
+                    android:layout_margin="10dp"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/camera"
+                    tools:ignore="VectorDrawableCompat"/>
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@+id/imgStep"
+                    android:layout_below="@+id/cachlam"
+                    android:text="+"
+                    android:id="@+id/addImage"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/b2">
+
+                <EditText
+                    android:id="@+id/cachlam1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape2"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/making"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp" />
+
+                <Button
+                    android:id="@+id/substract1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:padding="15dp"
+                    android:text="-" />
+            </RelativeLayout>
 
             <ImageView
-                android:layout_gravity="center"
-                android:scaleType="fitXY"
                 android:id="@+id/ImageDish"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:srcCompat="@drawable/camera"
-                tools:ignore="VectorDrawableCompat"
                 android:layout_centerInParent="true"
-                />
+                android:layout_gravity="center"
+                android:layout_margin="10dp"
+                android:scaleType="fitXY"
+                app:srcCompat="@drawable/camera"
+                tools:ignore="VectorDrawableCompat" />
 
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="66dp">
 
                 <Button
-                    android:layout_centerInParent="true"
                     android:id="@+id/upload"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="@color/white"
+                    android:layout_centerInParent="true"
                     android:layout_marginTop="4dp"
-                    android:text="@string/post"
-                    android:textSize="20dp"
                     android:background="@drawable/shape4"
-                    />
+                    android:text="@string/post"
+                    android:textColor="@color/white"
+                    android:textSize="20dp" />
             </RelativeLayout>
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"
-                />
+                android:orientation="vertical" />
 
         </LinearLayout>
     </ScrollView>

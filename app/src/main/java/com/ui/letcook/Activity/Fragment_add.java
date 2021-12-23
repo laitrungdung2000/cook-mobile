@@ -5,12 +5,14 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -51,21 +53,24 @@ public class Fragment_add extends Fragment {
     FirebaseAuth auth;
     FirebaseUser user;
     public static final int Pick_IMAGE_REQUEST = 1;
-    Uri image_uri;
+    public static final int Pick_IMAGE_STEP= 2;
+
+    Uri image_uri, image_step;
     Button upload;
+    Button add, hiddenButton, hiddenButton1, addImage;
     Button chooseimage;
     EditText namedish;
     EditText mota, nguyenlieu;
     TextView textView;
     ProgressDialog pd;
-    ImageView imageDish;
-    TextView make;
+    ImageView imageDish, imgStep;
+    TextView make, make1;
     int sobai;
-
+    RelativeLayout b1, b2;
     private Context mContext ;
     @Nullable
     @Override
-    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@NonNull final LayoutInflater inflater, @Nullable final ViewGroup container, @Nullable Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.fragment_add,container,false);
         imageDish= (ImageView) v.findViewById(R.id.ImageDish);
         pd=new ProgressDialog(getActivity());
@@ -102,16 +107,51 @@ public class Fragment_add extends Fragment {
             }
         });
 
-
         make = v.findViewById(R.id.cachlam);
+        make1 = v.findViewById(R.id.cachlam1);
         namedish = v.findViewById(R.id.namedish);
         upload = v.findViewById(R.id.upload);
+        add = v.findViewById(R.id.add);
+        b1 = v.findViewById(R.id.b1);
+        b2 = v.findViewById(R.id.b2);
+        hiddenButton = v.findViewById(R.id.substract);
+        hiddenButton1 = v.findViewById(R.id.substract1);
+        addImage = v.findViewById(R.id.addImage);
+        imgStep = v.findViewById(R.id.imgStep);
+
+        addImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                opentfile(Pick_IMAGE_STEP);
+            }
+        });
+        hiddenButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b1.setVisibility(View.GONE);
+            }
+        });
+        hiddenButton1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b2.setVisibility(View.GONE);
+            }
+        });
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(b1.getVisibility() == View.GONE)
+                    b1.setVisibility(View.VISIBLE);
+                else if(b2.getVisibility() == View.GONE)
+                    b2.setVisibility(View.VISIBLE);
+            }
+        });
 
 
         imageDish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                opentfile();
+                opentfile(Pick_IMAGE_REQUEST);
             }
         });
 
@@ -154,11 +194,11 @@ public class Fragment_add extends Fragment {
         this.mContext = context;
     }
 
-    private void opentfile() {
+    private void opentfile(int i) {
         Intent intent = new Intent();
         intent.setType("image/*");
         intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(intent, Pick_IMAGE_REQUEST);
+        startActivityForResult(intent, i);
 
     }
 
@@ -170,8 +210,10 @@ public class Fragment_add extends Fragment {
                 && data != null && data.getData() != null) {
             image_uri = data.getData();
             Picasso.get().load(image_uri).fit().centerCrop().into(imageDish);
-
-
+        } else if(requestCode == Pick_IMAGE_STEP && resultCode == RESULT_OK
+                && data != null && data.getData() != null) {
+            image_step = data.getData();
+            Picasso.get().load(image_step).fit().centerCrop().into(imgStep);
         }
     }
     private void uploadfile() {
