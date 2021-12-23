@@ -5,9 +5,21 @@
       <map>
         <entry key="app/src/main/res/drawable/camera.xml" value="0.21041666666666667" />
         <entry key="app/src/main/res/drawable/shape2.xml" value="0.3037037037037037" />
+        <entry key="app/src/main/res/layout/activity_recipe.xml" value="0.190625" />
         <entry key="app/src/main/res/layout/activity_save_dish.xml" value="0.35572916666666665" />
         <entry key="app/src/main/res/layout/activity_signin.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/activity_start.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/category.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/dish_item.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/dish_item_admin.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/dish_item_best.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/dish_item_letcook.xml" value="0.190625" />
         <entry key="app/src/main/res/layout/fragment_add.xml" value="0.35572916666666665" />
+        <entry key="app/src/main/res/layout/fragment_home.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/info.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/layout_screen.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/listviewtest.xml" value="0.190625" />
+        <entry key="app/src/main/res/layout/uiacount.xml" value="0.190625" />
       </map>
     </option>
   </component>

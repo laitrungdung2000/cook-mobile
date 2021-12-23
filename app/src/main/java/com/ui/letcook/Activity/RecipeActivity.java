@@ -34,6 +34,9 @@ import com.ui.letcook.Model.Comment;
 import com.ui.letcook.Adapter.CommentAdapter2;
 import com.ui.letcook.R;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
 
 public class RecipeActivity extends LocalizationActivity {
@@ -180,7 +183,18 @@ public class RecipeActivity extends LocalizationActivity {
                 solikere.setText(solike+"");
                 Picasso.get().load(imagedish).into(imageDish);
                 nameuser.setText(splitemail(emailuser));
-                making.setText(make);
+                String makeStepString = "";
+                try {
+                    JSONObject makeStep = new JSONObject(make);
+                    if(makeStep.get("b1") != null)
+                        makeStepString = makeStepString + "B1: " + makeStep.get("b1").toString();
+                    if(makeStep.get("b2") != null)
+                        makeStepString = makeStepString + "\n" + "B2: " + makeStep.get("b2").toString();
+                    Log.v("Dish", makeStep.get("b2").toString());
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+                making.setText(makeStepString);
                 namedish.setText(namedish2);
                 soviewre.setText(ds.child("view").getValue().toString()+"");
             }

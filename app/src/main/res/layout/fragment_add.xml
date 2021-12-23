@@ -66,6 +66,7 @@
             <RelativeLayout
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
+                android:visibility="gone"
                 android:id="@+id/b1">
 
                 <EditText
@@ -89,22 +90,22 @@
                     android:layout_marginTop="10dp"
                     android:padding="15dp"
                     android:text="-" />
-                <ImageView
-                    android:id="@+id/imgStep"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_below="@+id/cachlam"
-                    android:layout_margin="10dp"
-                    android:scaleType="fitXY"
-                    app:srcCompat="@drawable/camera"
-                    tools:ignore="VectorDrawableCompat"/>
-                <Button
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_toRightOf="@+id/imgStep"
-                    android:layout_below="@+id/cachlam"
-                    android:text="+"
-                    android:id="@+id/addImage"/>
+<!--                <ImageView-->
+<!--                    android:id="@+id/imgStep"-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_below="@+id/cachlam"-->
+<!--                    android:layout_margin="10dp"-->
+<!--                    android:scaleType="fitXY"-->
+<!--                    app:srcCompat="@drawable/camera"-->
+<!--                    tools:ignore="VectorDrawableCompat"/>-->
+<!--                <Button-->
+<!--                    android:layout_width="wrap_content"-->
+<!--                    android:layout_height="wrap_content"-->
+<!--                    android:layout_toRightOf="@+id/imgStep"-->
+<!--                    android:layout_below="@+id/cachlam"-->
+<!--                    android:text="+"-->
+<!--                    android:id="@+id/addImage"/>-->
             </RelativeLayout>
 
             <RelativeLayout

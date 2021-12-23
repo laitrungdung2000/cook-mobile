@@ -44,6 +44,9 @@ import java.util.Calendar;
 
 import static android.app.Activity.RESULT_OK;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class Fragment_add extends Fragment {
     String imageuser = "";
     StorageReference storageReference;
@@ -116,15 +119,15 @@ public class Fragment_add extends Fragment {
         b2 = v.findViewById(R.id.b2);
         hiddenButton = v.findViewById(R.id.substract);
         hiddenButton1 = v.findViewById(R.id.substract1);
-        addImage = v.findViewById(R.id.addImage);
-        imgStep = v.findViewById(R.id.imgStep);
+//        addImage = v.findViewById(R.id.addImage);
+//        imgStep = v.findViewById(R.id.imgStep);
 
-        addImage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                opentfile(Pick_IMAGE_STEP);
-            }
-        });
+//        addImage.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                opentfile(Pick_IMAGE_STEP);
+//            }
+//        });
         hiddenButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -220,19 +223,30 @@ public class Fragment_add extends Fragment {
         String image = "https://firebasestorage.googleapis.com/v0/b/dcmm-bc67e.appspot.com/o/dish%2Fimage_1573225436453?alt=media&token=a60d47f5-e184-43cf-af00-b0b04ef5d54b";
         pd.show();
         String filePathAndName = "dish/" + "image_" + System.currentTimeMillis();
-        StorageReference storageReference2nd = storageReference.child(filePathAndName);
+        final StorageReference storageReference2nd = storageReference.child(filePathAndName);
         if (image_uri != null) {
             storageReference2nd.putFile(image_uri)
                     .addOnSuccessListener(new OnSuccessListener<UploadTask.TaskSnapshot>() {
                         @Override
                         public void onSuccess(UploadTask.TaskSnapshot taskSnapshot) {
                             Task<Uri> uriTask = taskSnapshot.getStorage().getDownloadUrl();
-                            while (!uriTask.isSuccessful()) ;
+                            while (!uriTask.isSuccessful());
                             Uri downloadUri = uriTask.getResult();
                             if (uriTask.isSuccessful()) {
+//                                String fileImageStep = "dish/" + "image_b1" + System.currentTimeMillis();
+//                                final StorageReference storageReference3td = storageReference.child(fileImageStep);
+//                                storageReference3td.putFile(image_step)
                                 pd.dismiss();
                                 String id = databaseReferencedish.push().getKey();
-                                Dish dish = new Dish(downloadUri.toString(), namedish.getText().toString(), mota.getText().toString(), nguyenlieu.getText().toString(), user.getEmail(), imageuser, make.getText().toString(), TimeDate(), 0, id, 0);
+                                JSONObject allStep = new JSONObject();
+                                try {
+                                    allStep.put("b1",make.getText().toString());
+                                    allStep.put("b2",make.getText().toString());
+                                } catch (JSONException e) {
+                                    e.printStackTrace();
+                                }
+                                Log.e("Dish", allStep.toString());
+                                Dish dish = new Dish(downloadUri.toString(), namedish.getText().toString(), mota.getText().toString(), nguyenlieu.getText().toString(), user.getEmail(), imageuser, allStep.toString(), TimeDate(), 0, id, 0);
                                 databaseReferencedish.child(id).setValue(dish)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
