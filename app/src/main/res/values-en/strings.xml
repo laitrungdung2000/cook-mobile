@@ -95,5 +95,7 @@
     <string name="skip">Skip</string>
     <string name="exit">Press again to exit</string>
     <string name="app_ver">App ver 1.0 by DungLt2k</string>
+    <string name="add_step">Add making</string>
+    <string name="enter_make">Enter how to make</string>
 
 </resources>

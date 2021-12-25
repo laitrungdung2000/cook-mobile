@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
+import android.text.Html;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -184,17 +185,14 @@ public class RecipeActivity extends LocalizationActivity {
                 Picasso.get().load(imagedish).into(imageDish);
                 nameuser.setText(splitemail(emailuser));
                 String makeStepString = "";
-                try {
-                    JSONObject makeStep = new JSONObject(make);
-                    if(makeStep.get("b1") != null)
-                        makeStepString = makeStepString + "B1: " + makeStep.get("b1").toString();
-                    if(makeStep.get("b2") != null)
-                        makeStepString = makeStepString + "\n" + "B2: " + makeStep.get("b2").toString();
-                    Log.v("Dish", makeStep.get("b2").toString());
-                } catch (JSONException e) {
-                    e.printStackTrace();
+                String[] parts = make.split(",");
+                Log.v("Dish", make.split(",")[0]);
+                for(int i=1; i <= parts.length; i++) {
+                    makeStepString = makeStepString + "<b>Bước " +i+": </b>" + parts[i-1] + "<br/>";
+
                 }
-                making.setText(makeStepString);
+
+                making.setText(Html.fromHtml(makeStepString));
                 namedish.setText(namedish2);
                 soviewre.setText(ds.child("view").getValue().toString()+"");
             }

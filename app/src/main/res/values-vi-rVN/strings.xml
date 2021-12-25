@@ -96,5 +96,6 @@
     <string name="skip">Bỏ qua</string>
     <string name="exit">Ấn lần nữa để thoát</string>
     <string name="app_ver">App ver 1.0 by DungLt2k</string>
-
+    <string name="add_step">Thêm bước làm</string>
+    <string name="enter_make">Mời nhập cách làm</string>
 </resources>

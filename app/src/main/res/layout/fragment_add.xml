@@ -61,7 +61,10 @@
                 android:id="@+id/add"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Add" />
+                android:background="@drawable/shape4"
+                android:textColor="@color/white"
+                android:padding="10px"
+                android:text="@string/add_step" />
 
             <RelativeLayout
                 android:layout_width="fill_parent"
@@ -88,7 +91,9 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="10dp"
-                    android:padding="15dp"
+                    android:background="@drawable/shape4"
+                    android:textColor="@color/white"
+                    android:padding="5dp"
                     android:text="-" />
 <!--                <ImageView-->
 <!--                    android:id="@+id/imgStep"-->
@@ -134,7 +139,105 @@
                     android:layout_height="wrap_content"
                     android:layout_alignParentRight="true"
                     android:layout_marginTop="10dp"
-                    android:padding="15dp"
+                    android:padding="5dp"
+                    android:background="@drawable/shape4"
+                    android:textColor="@color/white"
+                    android:text="-" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/b3">
+
+                <EditText
+                    android:id="@+id/cachlam2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape2"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/making"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp" />
+
+                <Button
+                    android:id="@+id/substract2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:background="@drawable/shape4"
+                    android:textColor="@color/white"
+                    android:text="-" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/b4">
+
+                <EditText
+                    android:id="@+id/cachlam3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape2"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/making"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp" />
+
+                <Button
+                    android:id="@+id/substract3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
+                    android:background="@drawable/shape4"
+                    android:textColor="@color/white"
+                    android:text="-" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:id="@+id/b5">
+
+                <EditText
+                    android:id="@+id/cachlam4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/shape2"
+                    android:ems="10"
+                    android:gravity="start|top"
+                    android:hint="@string/making"
+                    android:inputType="textMultiLine"
+                    android:padding="15dp" />
+
+                <Button
+                    android:id="@+id/substract4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:background="@drawable/shape4"
+                    android:textColor="@color/white"
+                    android:layout_marginTop="10dp"
+                    android:padding="5dp"
                     android:text="-" />
             </RelativeLayout>
 

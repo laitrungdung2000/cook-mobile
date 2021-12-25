@@ -5,6 +5,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,6 +41,7 @@ import com.ui.letcook.R;
 
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 import static android.app.Activity.RESULT_OK;
@@ -60,16 +62,16 @@ public class Fragment_add extends Fragment {
 
     Uri image_uri, image_step;
     Button upload;
-    Button add, hiddenButton, hiddenButton1, addImage;
+    Button add, hiddenButton, hiddenButton1, hiddenButton2, hiddenButton3, hiddenButton4;
     Button chooseimage;
     EditText namedish;
     EditText mota, nguyenlieu;
     TextView textView;
     ProgressDialog pd;
     ImageView imageDish, imgStep;
-    TextView make, make1;
+    TextView make, make1, make2, make3, make4;
     int sobai;
-    RelativeLayout b1, b2;
+    RelativeLayout b1, b2, b3, b4, b5;
     private Context mContext ;
     @Nullable
     @Override
@@ -112,13 +114,24 @@ public class Fragment_add extends Fragment {
 
         make = v.findViewById(R.id.cachlam);
         make1 = v.findViewById(R.id.cachlam1);
+        make2 = v.findViewById(R.id.cachlam2);
+        make3 = v.findViewById(R.id.cachlam3);
+        make4 = v.findViewById(R.id.cachlam4);
+
         namedish = v.findViewById(R.id.namedish);
         upload = v.findViewById(R.id.upload);
         add = v.findViewById(R.id.add);
         b1 = v.findViewById(R.id.b1);
         b2 = v.findViewById(R.id.b2);
+        b3 = v.findViewById(R.id.b3);
+        b4 = v.findViewById(R.id.b4);
+        b5 = v.findViewById(R.id.b5);
         hiddenButton = v.findViewById(R.id.substract);
         hiddenButton1 = v.findViewById(R.id.substract1);
+        hiddenButton2 = v.findViewById(R.id.substract2);
+        hiddenButton3 = v.findViewById(R.id.substract3);
+        hiddenButton4 = v.findViewById(R.id.substract4);
+
 //        addImage = v.findViewById(R.id.addImage);
 //        imgStep = v.findViewById(R.id.imgStep);
 
@@ -140,6 +153,27 @@ public class Fragment_add extends Fragment {
                 b2.setVisibility(View.GONE);
             }
         });
+
+        hiddenButton2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b3.setVisibility(View.GONE);
+            }
+        });
+
+        hiddenButton3.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b4.setVisibility(View.GONE);
+            }
+        });
+
+        hiddenButton4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                b5.setVisibility(View.GONE);
+            }
+        });
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -147,6 +181,12 @@ public class Fragment_add extends Fragment {
                     b1.setVisibility(View.VISIBLE);
                 else if(b2.getVisibility() == View.GONE)
                     b2.setVisibility(View.VISIBLE);
+                else if(b3.getVisibility() == View.GONE)
+                    b3.setVisibility(View.VISIBLE);
+                else if(b4.getVisibility() == View.GONE)
+                    b4.setVisibility(View.VISIBLE);
+                else if(b5.getVisibility() == View.GONE)
+                    b5.setVisibility(View.VISIBLE);
             }
         });
 
@@ -181,7 +221,7 @@ public class Fragment_add extends Fragment {
                     return;
                 }
                 if(cachlam.isEmpty()){
-                    mota.setError(mContext.getString(R.string.enter_material));
+                    make.setError(mContext.getString(R.string.enter_make));
                     make.requestFocus();
                     return;
                 } else uploadfile();
@@ -238,15 +278,19 @@ public class Fragment_add extends Fragment {
 //                                storageReference3td.putFile(image_step)
                                 pd.dismiss();
                                 String id = databaseReferencedish.push().getKey();
-                                JSONObject allStep = new JSONObject();
-                                try {
-                                    allStep.put("b1",make.getText().toString());
-                                    allStep.put("b2",make.getText().toString());
-                                } catch (JSONException e) {
-                                    e.printStackTrace();
-                                }
-                                Log.e("Dish", allStep.toString());
-                                Dish dish = new Dish(downloadUri.toString(), namedish.getText().toString(), mota.getText().toString(), nguyenlieu.getText().toString(), user.getEmail(), imageuser, allStep.toString(), TimeDate(), 0, id, 0);
+                                ArrayList<String> allStep = new ArrayList<String>();
+                                if(!make.getText().toString().isEmpty())
+                                    allStep.add(make.getText().toString());
+                                if(!make1.getText().toString().isEmpty())
+                                    allStep.add(make1.getText().toString());
+                                if(!make2.getText().toString().isEmpty())
+                                    allStep.add(make2.getText().toString());
+                                if(!make3.getText().toString().isEmpty())
+                                    allStep.add(make3.getText().toString());
+                                if(!make4.getText().toString().isEmpty())
+                                    allStep.add(make4.getText().toString());
+
+                                Dish dish = new Dish(downloadUri.toString(), namedish.getText().toString(), mota.getText().toString(), nguyenlieu.getText().toString(), user.getEmail(), imageuser, TextUtils.join(",", allStep), TimeDate(), 0, id, 0);
                                 databaseReferencedish.child(id).setValue(dish)
                                         .addOnSuccessListener(new OnSuccessListener<Void>() {
                                             @Override
@@ -265,6 +309,11 @@ public class Fragment_add extends Fragment {
                                 namedish.setText("");
                                 mota.setText("");
                                 make.setText("");
+                                make1.setText("");
+                                make2.setText("");
+                                make3.setText("");
+                                make4.setText("");
+
                                 nguyenlieu.setText("");
                                 Picasso.get().load(R.drawable.camera).placeholder(R.drawable.camera).fit().centerCrop().into(imageDish);
 
